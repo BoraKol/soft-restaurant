@@ -1,0 +1,55 @@
+.auth-form-container, .login-form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+
+.login-form input {
+    border: 2px solid black;
+    width: 50vh;
+  }
+
+
+
+  @media screen and (min-width: 600px) {
+    .auth-form-container {
+      padding: 5rem;
+      border: 1px solid white;
+      border-radius: 10px;
+      margin: 0.5rem;
+    }
+  }
+
+  input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .login-btn {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 50vh;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+ 
+  .register-link{
+    background: none;
+    margin-top: 25px;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50vh;
+    margin:auto;
+
+  }
+
+  .register-link strong {
+    color: red;
+    margin-left: 19vh;
+  }

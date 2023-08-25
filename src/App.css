@@ -1,0 +1,83 @@
+.App {
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: #E8E7DC;
+  }
+
+  #burger-logo {
+    width: 180px;
+    height: 180px;
+    margin-top: auto;
+
+  } 
+  
+  .auth-form-container, .login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    margin: auto;
+    
+  }
+
+  .auth-form-container h2 {
+    text-decoration: underline;
+    text-decoration-color: red;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .register-form input {
+    border: 2px solid black;
+    width: 50vh;
+   
+  }
+  
+  @media screen and (min-width: 600px) {
+    .auth-form-container {
+      padding: 5rem;
+      border: 1px solid white;
+      border-radius: 10px;
+      margin: 0.5rem;
+    }
+  }
+  
+  label {
+    text-align: left;
+    padding: 0.25rem 0;
+  }
+  
+  input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    height: 45px;
+  }
+  
+  .login-register-btn {
+    border: 2px solid red;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    height: 6.5vh;
+  }
+ 
+  .login-link-btn {
+    border: none;
+    display: flex;
+    margin: auto;
+  }
+
+  .login-link-btn strong {
+    color: red;
+  }
