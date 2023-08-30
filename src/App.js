@@ -12,6 +12,10 @@ import Category from "./components/Category";
 import Order from './components/Order';
 import Cart from "./components/Cart";
 
+import Delivery from "./components/Delivery/Delivery";
+import Payment from "./components/Payment/Payment";
+
+
 function App() {
   return (
     <Router>
@@ -48,6 +52,9 @@ function App() {
             </LayoutWithoutNavbar>
           }
         />
+
+  <Route path="/delivery" component={Delivery} />
+  <Route path="/payment" component={Payment} />
 
 
         {/* Other routes */}
