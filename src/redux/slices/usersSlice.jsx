@@ -13,6 +13,7 @@ export const addNewUserAsync= createAsyncThunk('users/register' ,async(data)=> {
 export const userIsLoginedAsync= createAsyncThunk('users/login' , async(data) => {
     const response = await axios.post(`${process.env.REACT_APP_API_BASE_ENDPOINT}/users/login` ,data);
     return await response.data.data.users;
+    
 } ) 
 
 export const addUserAdressAsync= createAsyncThunk('users/address' , async(data)=> {
@@ -25,6 +26,8 @@ export const usersSlice= createSlice({
     name:"users",
     initialState: {
         users: [],
+        email:null,
+        password:null,
         loggedInUser:{
             email:null,
             password:null,
@@ -44,17 +47,18 @@ export const usersSlice= createSlice({
     
     extraReducers: (builder) => {
         builder
-          .addCase(addNewUserAsync.fulfilled, (state, action) => {
-            state.users.push(action.payload);
-            console.log(state.users);
-            alertify.success('Kaydolma işlemi başarılı.');
-          })
+        .addCase(addNewUserAsync.fulfilled, (state, action) => {
+          return {
+            ...state,
+            users: [...state.users, action.payload],
+          };
+        })
           .addCase(addNewUserAsync.rejected, (state, action) => {
             state.error = action.error.message;
             alertify.error('Kaydolma işlemi başarısız.');
           })
           .addCase(userIsLoginedAsync.fulfilled, (state, action) => {
-            state.loggedInUser = action.payload;
+            state.users = action.payload;
             console.log('Giriş başarılı!!');
             alertify.success('Giriş başarılı!!');
            
